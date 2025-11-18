@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FALSE GOD - MIT Technology Review Campaign</title>
+    <title>FALSE GOD - Final Campaign</title>
     <style>
       * {
         margin: 0;
@@ -12,7 +12,7 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+        font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
           sans-serif;
         background: #000000;
         color: #ffffff;
@@ -20,62 +20,16 @@
         margin: 0;
       }
 
-      .page-header {
-        background: #0a0a0a;
-        padding: 60px 40px;
-        text-align: center;
-        border-bottom: 1px solid #1a1a1a;
-      }
-
-      .page-header h1 {
-        font-size: 48px;
-        font-weight: 800;
-        margin-bottom: 15px;
-        letter-spacing: -1px;
-      }
-
-      .page-header p {
-        font-size: 18px;
-        color: #888;
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.6;
-      }
-
       .ad-container {
-        max-width: 1800px;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 80px 40px;
+        padding: 60px 20px;
       }
 
       .ad-section {
-        margin-bottom: 120px;
-      }
-
-      .ad-title {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      .ad-title h2 {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-
-      .ad-title .specs {
-        font-size: 14px;
-        color: #666;
-        font-family: 'Courier New', monospace;
-        letter-spacing: 0.5px;
-      }
-
-      .ad-display {
+        margin-bottom: 100px;
         display: flex;
         justify-content: center;
-        padding: 60px 0;
-        background: #0a0a0a;
-        border-radius: 12px;
       }
 
       /* ========== PRINT AD ========== */
@@ -83,8 +37,8 @@
         width: 700px;
         height: 975px;
         position: relative;
-        background: #000;
-        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+        background: #000000;
+        box-shadow: 0 50px 120px rgba(0, 0, 0, 0.95);
         overflow: hidden;
       }
 
@@ -93,18 +47,18 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 35%;
-        filter: brightness(0.45) contrast(1.4) saturate(0.8);
+        object-position: center 40%;
+        filter: brightness(0.55) contrast(1.35) saturate(0.8);
       }
 
-      .print-ad-overlay {
+      .print-ad-gradient {
         position: absolute;
         width: 100%;
         height: 100%;
         background: linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 0.3) 0%,
-          rgba(0, 0, 0, 0.6) 50%,
+          rgba(0, 0, 0, 0.1) 0%,
+          rgba(0, 0, 0, 0.6) 60%,
           rgba(0, 0, 0, 0.95) 100%
         );
       }
@@ -114,163 +68,135 @@
         bottom: 0;
         left: 0;
         right: 0;
-        padding: 60px 55px 55px;
+        padding: 0 50px 50px;
         z-index: 10;
       }
 
       .print-ad-eyebrow {
         font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: #999;
-        margin-bottom: 25px;
-        font-weight: 600;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: #aaa;
+        margin-bottom: 24px;
+        font-style: italic;
       }
 
       .print-ad-headline {
-        font-size: 51px;
+        font-size: 62px;
         font-weight: 900;
-        line-height: 1.05;
+        line-height: 0.95;
         margin-bottom: 28px;
-        letter-spacing: -1.5px;
+        letter-spacing: -3px;
         color: #ffffff;
-        text-shadow: 0 2px 30px rgba(0, 0, 0, 0.9);
+        text-shadow: 0 3px 40px rgba(0, 0, 0, 0.9);
       }
 
       .print-ad-subhead {
-        font-size: 22px;
-        line-height: 1.35;
-        color: #e8e8e8;
-        margin-bottom: 25px;
-        font-weight: 400;
-        text-shadow: 0 1px 20px rgba(0, 0, 0, 0.8);
-      }
-
-      .print-ad-divider {
-        width: 80px;
-        height: 3px;
-        background: #ffffff;
-        margin-bottom: 25px;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #f5f5f5;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
       }
 
       .print-ad-body {
         font-size: 16px;
-        line-height: 1.6;
-        color: #d0d0d0;
+        line-height: 1.5;
+        color: #d8d8d8;
         margin-bottom: 35px;
         text-shadow: 0 1px 15px rgba(0, 0, 0, 0.8);
+      }
+
+      .print-ad-divider {
+        width: 60px;
+        height: 2px;
+        background: #ffffff;
+        margin-bottom: 30px;
+        opacity: 0.7;
       }
 
       .print-ad-cta {
         display: flex;
         align-items: center;
-        gap: 30px;
+        gap: 28px;
       }
 
       .print-ad-qr {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         background: #ffffff;
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 9px;
+        font-size: 8px;
         color: #000;
-        font-weight: 800;
-        box-shadow: 0 4px 25px rgba(255, 255, 255, 0.25);
-        flex-shrink: 0;
+        font-weight: 900;
+        box-shadow: 0 4px 30px rgba(255, 255, 255, 0.3);
       }
 
-      .print-ad-url-block {
+      .print-ad-url-section {
         flex: 1;
       }
 
-      .print-ad-url-label {
+      .print-ad-url-section .label {
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #888;
+        color: #999;
         margin-bottom: 6px;
+        font-weight: 600;
       }
 
-      .print-ad-url {
-        font-size: 30px;
-        font-weight: 800;
+      .print-ad-url-section .url {
+        font-size: 32px;
+        font-weight: 900;
         color: #ffffff;
-        letter-spacing: -0.5px;
+        letter-spacing: -1.5px;
+        line-height: 1;
       }
 
       /* ========== SPONSORSHIP ========== */
-      .sponsorship-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        max-width: 1400px;
+      .sponsorship-wrapper {
+        max-width: 850px;
         margin: 0 auto;
       }
 
-      .sponsorship-option {
-        background: #0a0a0a;
-        padding: 30px;
-        border-radius: 8px;
-        border: 1px solid #1a1a1a;
-      }
-
-      .sponsorship-label {
-        font-size: 14px;
-        color: #666;
+      .sponsor-label {
+        text-align: center;
+        font-size: 12px;
+        color: #555;
         margin-bottom: 25px;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        text-align: center;
+        letter-spacing: 2px;
       }
 
-      .sponsorship-preview {
+      .sponsor-preview {
         display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 25px;
-        background: #000;
+        align-items: center;
+        gap: 24px;
+        padding: 30px;
+        background: #0a0a0a;
+        border: 1px solid #1a1a1a;
         border-radius: 6px;
-        border: 1px solid #222;
       }
 
       .sponsor-image {
         width: 180px;
         height: 60px;
         flex-shrink: 0;
-        background: #000;
-        border: 1px solid #333;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background: #000000;
+        border: 1px solid #2a2a2a;
         position: relative;
         overflow: hidden;
-      }
-
-      .sponsor-logo-text {
-        font-size: 18px;
-        font-weight: 900;
-        letter-spacing: 2px;
-        color: #ffffff;
-        text-align: center;
-        line-height: 1;
-      }
-
-      .sponsor-logo-text .tagline {
-        display: block;
-        font-size: 7px;
-        font-weight: 500;
-        letter-spacing: 2.5px;
-        color: #888;
-        margin-top: 5px;
       }
 
       .sponsor-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: brightness(0.6) contrast(1.4);
+        filter: brightness(0.6) contrast(1.4) saturate(0.7);
       }
 
       .sponsor-image-overlay {
@@ -279,70 +205,84 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.5);
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      .sponsor-image-overlay .text {
-        font-size: 15px;
-        font-weight: 900;
-        letter-spacing: 1.5px;
-        color: #ffffff;
-      }
-
-      .sponsor-text {
-        flex: 1;
-        min-width: 0;
-      }
-
-      .sponsor-text h4 {
+      .sponsor-image-text {
         font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: #ffffff;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+      }
+
+      .sponsor-content {
+        flex: 1;
+      }
+
+      .sponsor-content h4 {
+        font-size: 17px;
         font-weight: 700;
-        margin-bottom: 8px;
-        color: #fff;
+        margin-bottom: 10px;
+        color: #ffffff;
         line-height: 1.3;
       }
 
-      .sponsor-text p {
-        font-size: 13px;
-        line-height: 1.5;
-        color: #999;
-        margin-bottom: 10px;
+      .sponsor-content p {
+        font-size: 14px;
+        line-height: 1.55;
+        color: #aaa;
+        margin-bottom: 12px;
       }
 
-      .sponsor-text .link {
-        color: #5ba3ff;
+      .sponsor-content .link {
+        color: #6b9eff;
         text-decoration: none;
-        font-weight: 600;
-        font-size: 13px;
+        font-weight: 700;
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+
+      .sponsor-content .link:hover {
+        color: #5a8eef;
       }
 
       /* ========== BANNER ========== */
-      .banner-showcase {
+      .banner-wrapper {
         max-width: 1180px;
         margin: 0 auto;
       }
 
-      .banner-ad {
-        width: 1180px;
-        height: 600px;
-        background: #000;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
+      .banner-label {
+        text-align: center;
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
 
-      .banner-ad img {
+      .banner-image {
+        width: 100%;
+        height: 600px;
+        background: #000000;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+      }
+
+      .banner-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 30%;
-        filter: brightness(0.55) contrast(1.4) saturate(0.8);
+        object-position: center 35%;
+        filter: brightness(0.5) contrast(1.4) saturate(0.75);
       }
 
-      .banner-vignette {
+      .banner-image-vignette {
         position: absolute;
         top: 0;
         left: 0;
@@ -351,83 +291,68 @@
         background: radial-gradient(
           ellipse at center,
           transparent 0%,
-          rgba(0, 0, 0, 0.6) 80%
+          rgba(0, 0, 0, 0.6) 90%
         );
       }
 
-      .banner-text-preview {
-        margin-top: 40px;
+      .banner-text {
+        margin-top: 35px;
         background: #0a0a0a;
         border: 1px solid #1a1a1a;
-        border-radius: 8px;
-        padding: 35px 40px;
+        border-radius: 6px;
+        padding: 38px 40px;
       }
 
-      .banner-text-preview h3 {
+      .banner-text h3 {
         font-size: 28px;
         font-weight: 800;
         line-height: 1.25;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
         color: #ffffff;
       }
 
-      .banner-text-preview p {
+      .banner-text p {
         font-size: 16px;
         line-height: 1.7;
         color: #b8b8b8;
         margin-bottom: 18px;
       }
 
-      .banner-cta-btn {
+      .banner-text .highlight {
+        color: #e0e0e0;
+        font-weight: 600;
+      }
+
+      .banner-cta {
         display: inline-block;
         background: #ffffff;
         color: #000000;
-        padding: 16px 40px;
-        border-radius: 6px;
+        padding: 16px 42px;
+        border-radius: 5px;
         font-weight: 800;
         font-size: 15px;
         text-decoration: none;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.2s ease;
+        letter-spacing: 1.2px;
         margin-top: 10px;
+        transition: all 0.2s;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
       }
 
-      .banner-cta-btn:hover {
-        background: #e5e5e5;
+      .banner-cta:hover {
+        background: #e8e8e8;
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
       }
 
-      .info-note {
-        background: #1a1a2e;
-        border-left: 4px solid #5ba3ff;
-        padding: 20px 25px;
-        margin-top: 30px;
-        border-radius: 4px;
-        font-size: 14px;
-        line-height: 1.7;
-        color: #b8b8b8;
-      }
-
-      .info-note strong {
-        color: #ffffff;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 1400px) {
-        .banner-ad {
-          width: 100%;
+      @media (max-width: 1200px) {
+        .banner-image {
           height: auto;
           aspect-ratio: 1180 / 600;
         }
-
-        .sponsorship-grid {
-          grid-template-columns: 1fr;
-        }
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 800px) {
         .print-ad {
           width: 100%;
           max-width: 500px;
@@ -436,207 +361,119 @@
         }
 
         .print-ad-headline {
-          font-size: 38px;
+          font-size: 44px;
         }
 
-        .print-ad-subhead {
-          font-size: 18px;
-        }
-
-        .print-ad-content {
-          padding: 40px 30px;
-        }
-
-        .sponsorship-preview {
+        .sponsor-preview {
           flex-direction: column;
-          align-items: center;
+          text-align: center;
         }
       }
     </style>
   </head>
   <body>
-    <div class="page-header">
-      <h1>FALSE GOD – MIT Technology Review</h1>
-      <p>
-        Conversion-optimized creative for sophisticated tech readers who want
-        depth, not hype.
-      </p>
-    </div>
-
     <div class="ad-container">
       <!-- ========== PRINT AD ========== -->
       <div class="ad-section">
-        <div class="ad-title">
-          <h2>Full-Page Print Ad</h2>
-          <p class="specs">
-            180 × 251 mm content | 210 × 280 mm with bleed | CMYK, 300 DPI, PDF
-          </p>
-        </div>
-
-        <div class="ad-display">
-          <div class="print-ad">
-            <img
-              class="print-ad-bg"
-              src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b58c9dbe-9418-4b77-a1cf-782dfa188c0a/IMG_4225.jpg?format=2500w"
-              alt="Background"
-            />
-            <div class="print-ad-overlay"></div>
-            <div class="print-ad-content">
-              <div class="print-ad-eyebrow">Signals From The Machine</div>
-              <h1 class="print-ad-headline">
-                Every Month:<br />I Read Philosophy,<br />AI Interviews Me<br />About
-                What<br />I Learned
-              </h1>
-              <p class="print-ad-subhead">
-                Using the machine as a dialogue partner to explore what the
-                machine can never be
-              </p>
-              <div class="print-ad-divider"></div>
-              <p class="print-ad-body">
-                Egyptian soul concepts. Greek philosophy. Modern neuroscience.
-                Spiritual traditions. Each month, deep reading meets AI-driven
-                inquiry. A tech entrepreneur's year-long exploration of
-                consciousness—from bacteria to neural networks—before we
-                automate away the questions that matter.
-              </p>
-              <div class="print-ad-cta">
-                <div class="print-ad-qr">QR CODE</div>
-                <div class="print-ad-url-block">
-                  <div class="print-ad-url-label">Free Newsletter</div>
-                  <div class="print-ad-url">falsegod.de</div>
-                </div>
+        <div class="print-ad">
+          <img
+            class="print-ad-bg"
+            src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b58c9dbe-9418-4b77-a1cf-782dfa188c0a/IMG_4225.jpg?format=2500w"
+            alt=""
+          />
+          <div class="print-ad-gradient"></div>
+          <div class="print-ad-content">
+            <div class="print-ad-eyebrow">
+              You already know something is wrong.
+            </div>
+            <h1 class="print-ad-headline">
+              YOU'RE NOT<br />PARANOID.<br />YOU'RE PAYING<br />ATTENTION.
+            </h1>
+            <div class="print-ad-subhead">
+              Monthly essays for those refusing to go numb
+            </div>
+            <div class="print-ad-divider"></div>
+            <p class="print-ad-body">
+              I'm a tech entrepreneur who uses AI to interview myself about
+              consciousness. From bacteria to neural networks. Philosophy,
+              neuroscience, art. For those who can't unsee what's happening.
+            </p>
+            <div class="print-ad-cta">
+              <div class="print-ad-qr">QR CODE</div>
+              <div class="print-ad-url-section">
+                <div class="label">Free Monthly</div>
+                <div class="url">falsegod.de/</div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="info-note">
-          <strong>Why this hooks:</strong> The method is immediately clear and
-          fascinating—reading dense material, then using AI as an interview
-          partner. "Using the machine to explore what the machine can never be"
-          is the paradox they'll want to follow. It respects their intelligence
-          while offering genuine intellectual curiosity.
         </div>
       </div>
 
       <!-- ========== SPONSORSHIP ========== -->
       <div class="ad-section">
-        <div class="ad-title">
-          <h2>Newsletter Sponsorship</h2>
-          <p class="specs">180 × 60 pixels image | Side-by-side layout</p>
-        </div>
-
-        <div class="ad-display">
-          <div class="sponsorship-grid">
-            <div class="sponsorship-option">
-              <div class="sponsorship-label">Option A: Text Logo</div>
-              <div class="sponsorship-preview">
-                <div class="sponsor-image">
-                  <div class="sponsor-logo-text">
-                    FALSE GOD
-                    <span class="tagline">SIGNALS FROM THE MACHINE</span>
-                  </div>
-                </div>
-                <div class="sponsor-text">
-                  <h4>
-                    Read philosophy. Let AI interview you. See what emerges.
-                  </h4>
-                  <p>
-                    A tech entrepreneur's monthly experiment: using machine
-                    dialogue to explore human consciousness. From ancient Egypt
-                    to neural networks.
-                  </p>
-                  <a href="#" class="link">Subscribe free →</a>
-                </div>
+        <div class="sponsorship-wrapper">
+          <div class="sponsor-label">Newsletter Sponsorship (Live Layout)</div>
+          <div class="sponsor-preview">
+            <div class="sponsor-image">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b7243323-60a2-4767-b45b-6c0e5ef702a8/IMG_4236.jpg?format=2500w"
+                alt=""
+              />
+              <div class="sponsor-image-overlay">
+                <div class="sponsor-image-text">FALSE GOD</div>
               </div>
             </div>
-
-            <div class="sponsorship-option">
-              <div class="sponsorship-label">Option B: Image Logo</div>
-              <div class="sponsorship-preview">
-                <div class="sponsor-image">
-                  <img
-                    src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b7243323-60a2-4767-b45b-6c0e5ef702a8/IMG_4236.jpg?format=2500w"
-                    alt="FALSE GOD"
-                  />
-                  <div class="sponsor-image-overlay">
-                    <div class="text">FALSE GOD</div>
-                  </div>
-                </div>
-                <div class="sponsor-text">
-                  <h4>
-                    Read philosophy. Let AI interview you. See what emerges.
-                  </h4>
-                  <p>
-                    A tech entrepreneur's monthly experiment: using machine
-                    dialogue to explore human consciousness. From ancient Egypt
-                    to neural networks.
-                  </p>
-                  <a href="#" class="link">Subscribe free →</a>
-                </div>
-              </div>
+            <div class="sponsor-content">
+              <h4>You can't unsee it once you notice</h4>
+              <p>
+                Monthly essays from a tech entrepreneur exploring consciousness
+                before it becomes code. For those still awake.
+              </p>
+              <a href="#" class="link">Subscribe free →</a>
             </div>
           </div>
-        </div>
-
-        <div class="info-note">
-          <strong>The hook:</strong> "Read philosophy. Let AI interview you. See
-          what emerges." This is the actual method, stated clearly. It's
-          intellectually intriguing and immediately actionable—readers can
-          imagine doing this themselves.
         </div>
       </div>
 
       <!-- ========== BANNER ========== -->
       <div class="ad-section">
-        <div class="ad-title">
-          <h2>Newsletter Banner Ad</h2>
-          <p class="specs">
-            1,180 × 600 pixels | RGB, 72 DPI | NO TEXT in image
-          </p>
-        </div>
-
-        <div class="ad-display">
-          <div class="banner-showcase">
-            <div class="banner-ad">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b58c9dbe-9418-4b77-a1cf-782dfa188c0a/IMG_4225.jpg?format=2500w"
-                alt="Banner"
-              />
-              <div class="banner-vignette"></div>
-            </div>
-
-            <div class="banner-text-preview">
-              <h3>
-                Can You Trace Consciousness From Bacteria Gasping For Air to AI
-                That Might One Day Gasp Back?
-              </h3>
-              <p>
-                That's the year-long journey. Every month: deep reading in
-                philosophy, neuroscience, spirituality, and AI. Then something
-                unusual—using AI itself as an interview partner to process what
-                was learned. The dialogue reveals insights neither human nor
-                machine could reach alone.
-              </p>
-              <p>
-                Signals From The Machine: A tech entrepreneur's exploration of
-                consciousness from ancient Egyptian soul concepts to modern
-                neural networks. Monthly essays combining rigorous research with
-                AI-assisted inquiry. For those who want to understand what makes
-                us human before we build something that might surpass it.
-              </p>
-              <a href="#" class="banner-cta-btn">Subscribe Free →</a>
-            </div>
+        <div class="banner-wrapper">
+          <div class="banner-label">Newsletter Banner</div>
+          <div class="banner-image">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b58c9dbe-9418-4b77-a1cf-782dfa188c0a/IMG_4225.jpg?format=2500w"
+              alt=""
+            />
+            <div class="banner-image-vignette"></div>
           </div>
-        </div>
-
-        <div class="info-note">
-          <strong>The intellectual hook:</strong> The question is ambitious but
-          honest—tracing consciousness evolution is the actual project. "AI that
-          might one day gasp back" is provocative without claiming AI is
-          conscious now. The method (using AI as interview partner) is genuinely
-          novel and intellectually defensible. This respects their intelligence
-          while offering something they haven't seen before.
+          <div class="banner-text">
+            <h3>
+              I Started Therapy To Save My Startup. Now I Can't Stop Asking
+              Questions Nobody Wants To Answer.
+            </h3>
+            <p>
+              What is consciousness? Can machines replicate it?
+              <span class="highlight"
+                >Are we automating away the one thing that makes us
+                irreplaceable?</span
+              >
+              These questions keep me up at night.
+            </p>
+            <p>
+              Every month: I read deep philosophy, neuroscience, AI research.
+              Then I use AI itself to interview me about what I learned. The
+              method is unusual. The insights are uncomfortable.
+              <span class="highlight"
+                >For tech founders, researchers, and parents who refuse to
+                pretend everything's fine.</span
+              >
+            </p>
+            <p>
+              From ancient Egyptian soul concepts to modern neural networks. Not
+              academic. Not optimistic. Just honest.
+            </p>
+            <a href="#" class="banner-cta">Subscribe Free →</a>
+          </div>
         </div>
       </div>
     </div>
