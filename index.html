@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FALSE GOD - MIT Technology Review Campaign</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+          sans-serif;
+        background: #000000;
+        color: #ffffff;
+        padding: 0;
+        margin: 0;
+      }
+
+      .page-header {
+        background: #0a0a0a;
+        padding: 60px 40px;
+        text-align: center;
+        border-bottom: 1px solid #1a1a1a;
+      }
+
+      .page-header h1 {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 15px;
+        letter-spacing: -1px;
+      }
+
+      .page-header p {
+        font-size: 18px;
+        color: #888;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .ad-container {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 80px 40px;
+      }
+
+      .ad-section {
+        margin-bottom: 120px;
+      }
+
+      .ad-title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .ad-title h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .ad-title .specs {
+        font-size: 14px;
+        color: #666;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.5px;
+      }
+
+      .ad-display {
+        display: flex;
+        justify-content: center;
+        padding: 60px 0;
+        background: #0a0a0a;
+        border-radius: 12px;
+      }
+
+      /* ========== PRINT AD ========== */
+      .print-ad {
+        width: 700px;
+        height: 975px;
+        position: relative;
+        background: #000;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+      }
+
+      .print-ad-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 35%;
+        filter: brightness(0.45) contrast(1.4) saturate(0.8);
+      }
+
+      .print-ad-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.3) 0%,
+          rgba(0, 0, 0, 0.6) 50%,
+          rgba(0, 0, 0, 0.95) 100%
+        );
+      }
+
+      .print-ad-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 60px 55px 55px;
+        z-index: 10;
+      }
+
+      .print-ad-eyebrow {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #999;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .print-ad-headline {
+        font-size: 51px;
+        font-weight: 900;
+        line-height: 1.05;
+        margin-bottom: 28px;
+        letter-spacing: -1.5px;
+        color: #ffffff;
+        text-shadow: 0 2px 30px rgba(0, 0, 0, 0.9);
+      }
+
+      .print-ad-subhead {
+        font-size: 22px;
+        line-height: 1.35;
+        color: #e8e8e8;
+        margin-bottom: 25px;
+        font-weight: 400;
+        text-shadow: 0 1px 20px rgba(0, 0, 0, 0.8);
+      }
+
+      .print-ad-divider {
+        width: 80px;
+        height: 3px;
+        background: #ffffff;
+        margin-bottom: 25px;
+      }
+
+      .print-ad-body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #d0d0d0;
+        margin-bottom: 35px;
+        text-shadow: 0 1px 15px rgba(0, 0, 0, 0.8);
+      }
+
+      .print-ad-cta {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .print-ad-qr {
+        width: 90px;
+        height: 90px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 9px;
+        color: #000;
+        font-weight: 800;
+        box-shadow: 0 4px 25px rgba(255, 255, 255, 0.25);
+        flex-shrink: 0;
+      }
+
+      .print-ad-url-block {
+        flex: 1;
+      }
+
+      .print-ad-url-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #888;
+        margin-bottom: 6px;
+      }
+
+      .print-ad-url {
+        font-size: 30px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+      }
+
+      /* ========== SPONSORSHIP ========== */
+      .sponsorship-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .sponsorship-option {
+        background: #0a0a0a;
+        padding: 30px;
+        border-radius: 8px;
+        border: 1px solid #1a1a1a;
+      }
+
+      .sponsorship-label {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+
+      .sponsorship-preview {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 25px;
+        background: #000;
+        border-radius: 6px;
+        border: 1px solid #222;
+      }
+
+      .sponsor-image {
+        width: 180px;
+        height: 60px;
+        flex-shrink: 0;
+        background: #000;
+        border: 1px solid #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sponsor-logo-text {
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .sponsor-logo-text .tagline {
+        display: block;
+        font-size: 7px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        color: #888;
+        margin-top: 5px;
+      }
+
+      .sponsor-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.6) contrast(1.4);
+      }
+
+      .sponsor-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .sponsor-image-overlay .text {
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        color: #ffffff;
+      }
+
+      .sponsor-text {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .sponsor-text h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #fff;
+        line-height: 1.3;
+      }
+
+      .sponsor-text p {
+        font-size: 13px;
+        line-height: 1.5;
+        color: #999;
+        margin-bottom: 10px;
+      }
+
+      .sponsor-text .link {
+        color: #5ba3ff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      /* ========== BANNER ========== */
+      .banner-showcase {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .banner-ad {
+        width: 1180px;
+        height: 600px;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .banner-ad img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+        filter: brightness(0.55) contrast(1.4) saturate(0.8);
+      }
+
+      .banner-vignette {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          ellipse at center,
+          transparent 0%,
+          rgba(0, 0, 0, 0.6) 80%
+        );
+      }
+
+      .banner-text-preview {
+        margin-top: 40px;
+        background: #0a0a0a;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        padding: 35px 40px;
+      }
+
+      .banner-text-preview h3 {
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.25;
+        margin-bottom: 20px;
+        color: #ffffff;
+      }
+
+      .banner-text-preview p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #b8b8b8;
+        margin-bottom: 18px;
+      }
+
+      .banner-cta-btn {
+        display: inline-block;
+        background: #ffffff;
+        color: #000000;
+        padding: 16px 40px;
+        border-radius: 6px;
+        font-weight: 800;
+        font-size: 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.2s ease;
+        margin-top: 10px;
+      }
+
+      .banner-cta-btn:hover {
+        background: #e5e5e5;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+      }
+
+      .info-note {
+        background: #1a1a2e;
+        border-left: 4px solid #5ba3ff;
+        padding: 20px 25px;
+        margin-top: 30px;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.7;
+        color: #b8b8b8;
+      }
+
+      .info-note strong {
+        color: #ffffff;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1400px) {
+        .banner-ad {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1180 / 600;
+        }
+
+        .sponsorship-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .print-ad {
+          width: 100%;
+          max-width: 500px;
+          height: auto;
+          aspect-ratio: 700 / 975;
+        }
+
+        .print-ad-headline {
+          font-size: 38px;
+        }
+
+        .print-ad-subhead {
+          font-size: 18px;
+        }
+
+        .print-ad-content {
+          padding: 40px 30px;
+        }
+
+        .sponsorship-preview {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-header">
+      <h1>FALSE GOD – MIT Technology Review</h1>
+      <p>
+        Conversion-optimized creative for sophisticated tech readers who want
+        depth, not hype.
+      </p>
+    </div>
+
+    <div class="ad-container">
+      <!-- ========== PRINT AD ========== -->
+      <div class="ad-section">
+        <div class="ad-title">
+          <h2>Full-Page Print Ad</h2>
+          <p class="specs">
+            180 × 251 mm content | 210 × 280 mm with bleed | CMYK, 300 DPI, PDF
+          </p>
+        </div>
+
+        <div class="ad-display">
+          <div class="print-ad">
+            <img
+              class="print-ad-bg"
+              src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b58c9dbe-9418-4b77-a1cf-782dfa188c0a/IMG_4225.jpg?format=2500w"
+              alt="Background"
+            />
+            <div class="print-ad-overlay"></div>
+            <div class="print-ad-content">
+              <div class="print-ad-eyebrow">Signals From The Machine</div>
+              <h1 class="print-ad-headline">
+                Every Month:<br />I Read Philosophy,<br />AI Interviews Me<br />About
+                What<br />I Learned
+              </h1>
+              <p class="print-ad-subhead">
+                Using the machine as a dialogue partner to explore what the
+                machine can never be
+              </p>
+              <div class="print-ad-divider"></div>
+              <p class="print-ad-body">
+                Egyptian soul concepts. Greek philosophy. Modern neuroscience.
+                Spiritual traditions. Each month, deep reading meets AI-driven
+                inquiry. A tech entrepreneur's year-long exploration of
+                consciousness—from bacteria to neural networks—before we
+                automate away the questions that matter.
+              </p>
+              <div class="print-ad-cta">
+                <div class="print-ad-qr">QR CODE</div>
+                <div class="print-ad-url-block">
+                  <div class="print-ad-url-label">Free Newsletter</div>
+                  <div class="print-ad-url">falsegod.de</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-note">
+          <strong>Why this hooks:</strong> The method is immediately clear and
+          fascinating—reading dense material, then using AI as an interview
+          partner. "Using the machine to explore what the machine can never be"
+          is the paradox they'll want to follow. It respects their intelligence
+          while offering genuine intellectual curiosity.
+        </div>
+      </div>
+
+      <!-- ========== SPONSORSHIP ========== -->
+      <div class="ad-section">
+        <div class="ad-title">
+          <h2>Newsletter Sponsorship</h2>
+          <p class="specs">180 × 60 pixels image | Side-by-side layout</p>
+        </div>
+
+        <div class="ad-display">
+          <div class="sponsorship-grid">
+            <div class="sponsorship-option">
+              <div class="sponsorship-label">Option A: Text Logo</div>
+              <div class="sponsorship-preview">
+                <div class="sponsor-image">
+                  <div class="sponsor-logo-text">
+                    FALSE GOD
+                    <span class="tagline">SIGNALS FROM THE MACHINE</span>
+                  </div>
+                </div>
+                <div class="sponsor-text">
+                  <h4>
+                    Read philosophy. Let AI interview you. See what emerges.
+                  </h4>
+                  <p>
+                    A tech entrepreneur's monthly experiment: using machine
+                    dialogue to explore human consciousness. From ancient Egypt
+                    to neural networks.
+                  </p>
+                  <a href="#" class="link">Subscribe free →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="sponsorship-option">
+              <div class="sponsorship-label">Option B: Image Logo</div>
+              <div class="sponsorship-preview">
+                <div class="sponsor-image">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b7243323-60a2-4767-b45b-6c0e5ef702a8/IMG_4236.jpg?format=2500w"
+                    alt="FALSE GOD"
+                  />
+                  <div class="sponsor-image-overlay">
+                    <div class="text">FALSE GOD</div>
+                  </div>
+                </div>
+                <div class="sponsor-text">
+                  <h4>
+                    Read philosophy. Let AI interview you. See what emerges.
+                  </h4>
+                  <p>
+                    A tech entrepreneur's monthly experiment: using machine
+                    dialogue to explore human consciousness. From ancient Egypt
+                    to neural networks.
+                  </p>
+                  <a href="#" class="link">Subscribe free →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-note">
+          <strong>The hook:</strong> "Read philosophy. Let AI interview you. See
+          what emerges." This is the actual method, stated clearly. It's
+          intellectually intriguing and immediately actionable—readers can
+          imagine doing this themselves.
+        </div>
+      </div>
+
+      <!-- ========== BANNER ========== -->
+      <div class="ad-section">
+        <div class="ad-title">
+          <h2>Newsletter Banner Ad</h2>
+          <p class="specs">
+            1,180 × 600 pixels | RGB, 72 DPI | NO TEXT in image
+          </p>
+        </div>
+
+        <div class="ad-display">
+          <div class="banner-showcase">
+            <div class="banner-ad">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/68eb0693bd5c857da1de593e/b58c9dbe-9418-4b77-a1cf-782dfa188c0a/IMG_4225.jpg?format=2500w"
+                alt="Banner"
+              />
+              <div class="banner-vignette"></div>
+            </div>
+
+            <div class="banner-text-preview">
+              <h3>
+                Can You Trace Consciousness From Bacteria Gasping For Air to AI
+                That Might One Day Gasp Back?
+              </h3>
+              <p>
+                That's the year-long journey. Every month: deep reading in
+                philosophy, neuroscience, spirituality, and AI. Then something
+                unusual—using AI itself as an interview partner to process what
+                was learned. The dialogue reveals insights neither human nor
+                machine could reach alone.
+              </p>
+              <p>
+                Signals From The Machine: A tech entrepreneur's exploration of
+                consciousness from ancient Egyptian soul concepts to modern
+                neural networks. Monthly essays combining rigorous research with
+                AI-assisted inquiry. For those who want to understand what makes
+                us human before we build something that might surpass it.
+              </p>
+              <a href="#" class="banner-cta-btn">Subscribe Free →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-note">
+          <strong>The intellectual hook:</strong> The question is ambitious but
+          honest—tracing consciousness evolution is the actual project. "AI that
+          might one day gasp back" is provocative without claiming AI is
+          conscious now. The method (using AI as interview partner) is genuinely
+          novel and intellectually defensible. This respects their intelligence
+          while offering something they haven't seen before.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
